@@ -1,5 +1,3 @@
-# README
-
 # DB設計
 ## usersテーブル
 |column|type|options|
@@ -12,9 +10,9 @@
 |updated_at|datetime|null: false|
 
 ### Association
-has_many :messages
-has_many :members
-has_many :groups, through: :members
+- has_many :messages
+- has_many :members
+- has_many :groups, through: :members
 
 ## groupsテーブル
 |column|type|options|
@@ -25,8 +23,8 @@ has_many :groups, through: :members
 |updated_at|datetime|null: false|
 
 ### Association
-has_many :members
-has_many :users, through: :members
+- has_many :members
+- has_many :users, through: :members
 
 ## membersテーブル
 |column|type|options|
@@ -37,8 +35,8 @@ has_many :users, through: :members
 |updated_at|datetime|null: false|
 
 ### Association
-belongs_to :user
-belongs_to :group
+- belongs_to :user
+- belongs_to :group
 
 ## messagesテーブル
 |column|type|options|
@@ -51,4 +49,4 @@ belongs_to :group
 |created_at|datetime|null:false|
 
 ### Association
-belongs_to :user
+- belongs_to :user
