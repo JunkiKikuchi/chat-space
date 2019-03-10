@@ -1,24 +1,54 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# DB設計
+## usersテーブル
+|column|type|options|
+|------|----|-------|
+|id|integer|primary key, index: true|
+|name|string|unique: true, null: false|
+|email|string|unique: true, null: false|
+|password|string|null: false|
+|created_at|datetime|null:false|
+|updated_at|datetime|null: false|
 
-Things you may want to cover:
+### Association
+has_many :messages
+has_many :members
+has_many :groups, through: :members
 
-* Ruby version
+## groupsテーブル
+|column|type|options|
+|------|----|-------|
+|id|integer|primary key, index: true|
+|name|string|unique: true, null: false|
+|created_at|datetime|null:false|
+|updated_at|datetime|null: false|
 
-* System dependencies
+### Association
+has_many :members
+has_many :users, through: :members
 
-* Configuration
+## membersテーブル
+|column|type|options|
+|------|----|-------|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|created_at|datetime|null:false|
+|updated_at|datetime|null: false|
 
-* Database creation
+### Association
+belongs_to :user
+belongs_to :group
 
-* Database initialization
+## messagesテーブル
+|column|type|options|
+|------|----|-------|
+|id|integer|primary key, null: false, index: true|
+|message|string|null: true, default: null|
+|image|string|null: true, default: null|
+|group_id|integer|null: false, index: true, foreign_key: true|
+|user_id|integer|null: false, index: true, foreign_key: true|
+|created_at|datetime|null:false|
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+belongs_to :user
