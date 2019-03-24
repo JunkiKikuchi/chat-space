@@ -27,8 +27,8 @@
 ## membersテーブル
 |column|type|options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
 |created_at|datetime|null:false|
 |updated_at|datetime|null: false|
 
@@ -41,8 +41,8 @@
 |------|----|-------|
 |message|string|null: true, default: null|
 |image|string|null: true, default: null|
-|group_id|integer|null: false, index: true, foreign_key: true|
-|user_id|integer|null: false, index: true, foreign_key: true|
+|group_id|reference|null: false, index: true, foreign_key: true|
+|user_id|reference|null: false, index: true, foreign_key: true|
 |created_at|datetime|null:false|
 
 ### Association
