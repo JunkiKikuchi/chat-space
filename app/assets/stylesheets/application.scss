@@ -1,1 +1,12 @@
-@import "./reset"
+// Add Library
+@import "./reset";
+
+// Import Mixin
+@import "mixin/mixin";
+
+// Import Partial
+@import "config/variable";
+// Base Style
+@import "base.scss";
+// Chat SideBar Menu and Group List
+@import "sideBar";

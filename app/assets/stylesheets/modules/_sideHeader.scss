@@ -1,0 +1,27 @@
+.side-header {
+  @include boxBase(100px, 0 20px);
+  //height: 100px;
+  display: flex;
+  align-items: center;
+  //padding: 0 20px;
+  background-color: $sideBackgroundNavyBlueColor;
+
+  &__box {
+    display: flex;
+    width: 100%;
+    @include characterDecoration($fWeight: bold);
+    justify-content: space-between;
+
+    &__menu {
+      display: flex;
+
+      &__create-group {
+        margin-left: 0.3rem;
+      }
+
+      &__edit-user {
+        margin-left: 0.3rem;
+      }
+    }
+  }
+}

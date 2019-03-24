@@ -1,0 +1,13 @@
+.chat-side {
+  width: 300px;
+  color: $sideCharWhiteColor;
+  float: left;
+
+  a {
+    color: $sideCharWhiteColor;
+  }
+
+  @import "modules/sideHeader";
+
+  @import "modules/groups";
+}
