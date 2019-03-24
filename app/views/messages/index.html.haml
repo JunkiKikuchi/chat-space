@@ -22,3 +22,5 @@
           %li.main-header__left-box__member-list__member Member : User1
       = link_to '#' do
         %div.main-header__edit-btn Edit
+    %div.messages
+      = render 'message', messages: [{name: "user1", date: "2019/03/08(Fri) 19:06:56", text: "test1", image: "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg"}, {name: "user2", date: "2019/03/08(Fri) 19:06:56", text: "test2", image: "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg"}]
