@@ -1,0 +1,8 @@
+.submit-btn {
+  @include boxBase(50px, 0 30px);
+  width: 100px;
+  margin-left: 15px;
+  background-color: $skyBlueColor;
+  color: $sideCharWhiteColor;
+  cursor: pointer;
+}
