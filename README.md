@@ -2,7 +2,6 @@
 ## usersテーブル
 |column|type|options|
 |------|----|-------|
-|id|integer|primary key, index: true|
 |name|string|unique: true, null: false|
 |email|string|unique: true, null: false|
 |password|string|null: false|
@@ -17,7 +16,6 @@
 ## groupsテーブル
 |column|type|options|
 |------|----|-------|
-|id|integer|primary key, index: true|
 |name|string|unique: true, null: false|
 |created_at|datetime|null:false|
 |updated_at|datetime|null: false|
@@ -41,7 +39,6 @@
 ## messagesテーブル
 |column|type|options|
 |------|----|-------|
-|id|integer|primary key, null: false, index: true|
 |message|string|null: true, default: null|
 |image|string|null: true, default: null|
 |group_id|integer|null: false, index: true, foreign_key: true|
