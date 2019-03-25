@@ -21,6 +21,7 @@
 |updated_at|datetime|null: false|
 
 ### Association
+- has_many :messages
 - has_many :members
 - has_many :users, through: :members
 
@@ -46,5 +47,6 @@
 |created_at|datetime|null:false|
 
 ### Association
+- belongs_to :group
 - belongs_to :user
 - validates message, presence: true, unless: :image?
