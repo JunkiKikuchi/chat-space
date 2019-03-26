@@ -40,8 +40,8 @@
 ## messagesテーブル
 |column|type|options|
 |------|----|-------|
-|message|string|null: true, default: null|
-|image|string|null: true, default: null|
+|message|string|null: true|
+|image|string|null: true|
 |group_id|reference|null: false, index: true, foreign_key: true|
 |user_id|reference|null: false, index: true, foreign_key: true|
 |created_at|datetime|null:false|
