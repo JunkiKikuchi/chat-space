@@ -1,9 +1,10 @@
+@import "modules/mainHeader";
+@import "modules/messages";
+@import "modules/form";
+@import "modules/submit";
+
 .chat-main {
   width: calc(100vw - 300px);
   float: left;
-
-  @import "modules/mainHeader";
-  @import "modules/messages";
-  @import "modules/form";
 }
-@import "modules/submit"
+

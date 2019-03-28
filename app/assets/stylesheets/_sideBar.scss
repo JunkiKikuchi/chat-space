@@ -1,3 +1,6 @@
+@import "modules/sideHeader";
+@import "modules/groups";
+
 .chat-side {
   width: 300px;
   color: $sideCharWhiteColor;
@@ -6,8 +9,4 @@
   a {
     color: $sideCharWhiteColor;
   }
-
-  @import "modules/sideHeader";
-
-  @import "modules/groups";
 }
