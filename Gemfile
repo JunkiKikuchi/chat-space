@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # haml
 gem 'haml-rails'
 gem 'erb2haml'
+
+# devise
+gem 'devise'
