@@ -1,0 +1,12 @@
+// character decoration
+@mixin characterDecoration($fSize: null, $color: null, $fWeight: null) {
+
+  font-size: if($fSize != null, $fSize, null);
+  color: if($color != null, $color, null);
+  font-weight: if($fWeight != null, $fWeight, null);
+}
+
+@mixin boxBase($height: null, $padding: null) {
+  height: if($height != null, $height, null);
+  padding: if($padding != null, $padding, null);;
+}

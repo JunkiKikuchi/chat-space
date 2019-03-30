@@ -1,0 +1,34 @@
+.flash-box
+  .notice グループを作成しました。
+.wapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p user1
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__create-group
+            = link_to '#' do
+              %i.fa.fa-edit
+          %li.side-header__box__menu__edit-user
+            = link_to '#' do
+              %i.fa.fa-cog
+    .groups
+      = render 'group', groups: [{name: "group1", message: "まだメッセージはありません"}, {name: "group2", message: "no message"}]
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group group1
+        %ul.main-header__left-box__member-list
+          %li.main-header__left-box__member-list__member Member : User1
+      = link_to '#' do
+        .main-header__edit-btn Edit
+    .messages
+      = render 'message', messages: [{name: "user1", date: "2019/03/08(Fri) 19:06:56", text: "test1"}, {name: "user2", date: "2019/03/08(Fri) 19:06:56", text: "test2"}]
+    .form
+      %form.new_message
+        .input-box
+          %input.input-box__text{:placeholder => "type a message"}
+          %label.input-box__image
+            %i.fa.fa-image
+            %input.input-box__image__file{:type => "file"}
+        %input.submit-btn{:type => "submit", :value => "Send"}

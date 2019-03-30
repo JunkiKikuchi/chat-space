@@ -1,0 +1,9 @@
+- messages.each do | message |
+  .message
+    .message__upper-info
+      %p.message__upper-info__talker
+        = message[:name]
+      %p.message__upper-info__date
+        = message[:date]
+    %p.message__text
+      = message[:text]
