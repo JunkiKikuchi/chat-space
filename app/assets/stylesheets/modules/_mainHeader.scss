@@ -1,0 +1,33 @@
+.main-header {
+  @include boxBase(100px, 0 40px);
+  display: flex;
+  border-bottom: solid 1px $mainBorderGrayColor;
+  overflow: scroll;
+
+  a {
+    color: $skyBlueColor;
+  }
+
+  &__left-box {
+    margin-top: 35px;
+
+    &__current-group {
+      @include characterDecoration(20px, $mainHeaderCharBlackColor);
+      margin-bottom: 15px;
+    }
+
+    &__member-list {
+      @include characterDecoration(12px, $mainContentsCharGrayColor);
+      display: flex;
+    }
+  }
+
+  &__edit-btn {
+    @include boxBase(40px, 0 20px);
+    line-height: 40px;
+    margin-top: 30px;
+    border: solid 1px $skyBlueColor;
+    position: absolute;
+    right: 40px;
+  }
+}
