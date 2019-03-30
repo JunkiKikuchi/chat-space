@@ -1,16 +1,14 @@
-.flash-box
-  .notice グループを作成しました。
 .wapper
   .chat-side
     .side-header
       .side-header__box
-        %p user1
+        = current_user.name
         %ul.side-header__box__menu
           %li.side-header__box__menu__create-group
             = link_to '#' do
               %i.fa.fa-edit
           %li.side-header__box__menu__edit-user
-            = link_to '#' do
+            = link_to edit_user_path(current_user) do
               %i.fa.fa-cog
     .groups
       = render 'group', groups: [{name: "group1", message: "まだメッセージはありません"}, {name: "group2", message: "no message"}]
