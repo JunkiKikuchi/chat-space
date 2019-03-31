@@ -61,3 +61,7 @@ gem 'font-awesome-rails'
 
 # devise
 gem 'devise'
+
+# image send library
+gem 'carrierwave'
+gem 'mini_magick'
