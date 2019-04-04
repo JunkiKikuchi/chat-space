@@ -12,4 +12,13 @@ class Group < ApplicationRecord
       'まだメッセージはありません'
     end
   end
+
+  def show_members
+    user_list = []
+    users.each do | user |
+      user_list << user.name
+    end
+
+    user_list.join(", ")
+  end
 end

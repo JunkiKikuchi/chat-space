@@ -1,10 +1,12 @@
 .chat-main
   .main-header
     .main-header__left-box
-      %h2.main-header__left-box__current-group group1
+      %h2.main-header__left-box__current-group
+        = @group.name
       %ul.main-header__left-box__member-list
-        %li.main-header__left-box__member-list__member Member : User1
-    = link_to '#' do
+        %li.main-header__left-box__member-list__member
+          = "Member : #{@group.show_members}"
+    = link_to edit_group_path(@group) do
       .main-header__edit-btn Edit
   .messages
     = render partial: 'messages/message', collection: @messages
