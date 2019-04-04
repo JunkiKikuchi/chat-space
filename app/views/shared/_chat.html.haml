@@ -7,19 +7,11 @@
     = link_to '#' do
       .main-header__edit-btn Edit
   .messages
-    = render 'messages/message', messages: [{name: "user1", date: "2019/03/08(Fri) 19:06:56", text: "test1"}, {name: "user2", date: "2019/03/08(Fri) 19:06:56", text: "test2"}]
-  /.form
-  /   %form.new_message
-  /     .input-box
-  /       %input.input-box__text{:placeholder => "type a message"}
-  /       %label.input-box__image
-  /         %i.fa.fa-image
-  /         %input.input-box__image__file{:type => "file"}
-  /     %input.submit-btn{:type => "submit", :value => "Send"}
+    = render partial: 'messages/message', collection: @messages
   .form
     = form_for [@group, @message], html: {class: 'new_message'} do |f|
       .input-box
-        = f.text_field :messages, class: 'input-box__text', placeholder: 'type a message'
+        = f.text_field :message, class: 'input-box__text', placeholder: 'type a message'
         = f.label :image, class: 'input-box__image' do
           %i.fa.fa-image
           = f.file_field :image, class: 'input-box__image__file'
