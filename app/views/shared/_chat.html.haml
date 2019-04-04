@@ -1,18 +1,20 @@
 .chat-main
   .main-header
     .main-header__left-box
-      %h2.main-header__left-box__current-group group1
+      %h2.main-header__left-box__current-group
+        = @group.name
       %ul.main-header__left-box__member-list
-        %li.main-header__left-box__member-list__member Member : User1
-    = link_to '#' do
+        %li.main-header__left-box__member-list__member
+          = "Member : #{@group.show_members}"
+    = link_to edit_group_path(@group) do
       .main-header__edit-btn Edit
   .messages
-    = render 'messages/message', messages: [{name: "user1", date: "2019/03/08(Fri) 19:06:56", text: "test1"}, {name: "user2", date: "2019/03/08(Fri) 19:06:56", text: "test2"}]
+    = render partial: 'messages/message', collection: @messages
   .form
-    %form.new_message
+    = form_for [@group, @message], html: {class: 'new_message'} do |f|
       .input-box
-        %input.input-box__text{:placeholder => "type a message"}
-        %label.input-box__image
+        = f.text_field :message, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
           %i.fa.fa-image
-          %input.input-box__image__file{:type => "file"}
-      %input.submit-btn{:type => "submit", :value => "Send"}
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
