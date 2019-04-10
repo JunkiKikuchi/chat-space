@@ -39,8 +39,7 @@ $(function(){
        var html = buildHTML(data);
        $('.messages').append(html);
        scroll();
-       $('#message_message').val("");
-       $('#message_image').val("");
+       $('#new_message')[0].reset();
     })
     .fail(function(){
       alert('メッセージを送信できませんでした！！');
