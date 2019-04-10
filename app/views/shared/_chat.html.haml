@@ -11,7 +11,7 @@
   .messages
     = render partial: 'messages/message', collection: @messages
   .form
-    = form_for [@group, @message], html: {class: 'new_message'} do |f|
+    = form_for [@group, @message], html: {id: 'new_message', class: 'new_message'} do |f|
       .input-box
         = f.text_field :message, class: 'input-box__text', placeholder: 'type a message'
         = f.label :image, class: 'input-box__image' do
