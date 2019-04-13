@@ -51,9 +51,7 @@ $(function(){
       $("#user-search-result").empty();
       if(input && users.length !== 0){
         users.forEach(function(user){
-          if(currentUserId != user.id){
-            searchUser(user);
-          }
+          searchUser(user);
         })
       }
       if(users.length === 0) {
