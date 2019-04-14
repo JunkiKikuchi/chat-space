@@ -8,9 +8,9 @@ $(function(){
                 </div>`
     search_list.append(html);
   }
-  function searchErrMsgToHTML(msg){
+  function searchErrMsgToHTML(){
     var html = `<div class="chat-group-user clearfix">
-                  <p class="chat-group-user__name">${msg}</p>
+                  <p class="chat-group-user__name">一致するユーザーが見つかりません</p>
                 </div>`
     search_list.append(html);
   }
@@ -55,7 +55,7 @@ $(function(){
         })
       }
       if(users.length === 0) {
-        searchErrMsgToHTML("一致するユーザーが見つかりません");
+        searchErrMsgToHTML();
       }
     })
     .fail(function(){
