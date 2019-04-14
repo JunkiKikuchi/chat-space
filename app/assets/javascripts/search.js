@@ -39,7 +39,6 @@ $(function(){
 
   $("#user-search-field").on("keyup", function(){
     var input = $('#user-search-field').val();
-    var currentUserId = $('#group_user_ids').val();
 
     $.ajax({
       type: 'GET',
