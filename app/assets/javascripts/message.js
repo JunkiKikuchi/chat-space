@@ -63,10 +63,9 @@ $(function(){
       }
       $('.messages').append(insertHTML);
       scroll();
-      console.log(messages);
     })
     .fail(function() {
-      console.log('error');
+      alert('自動更新に失敗しました。');
     });
   };
   setInterval(reloadMessages, 5000);
