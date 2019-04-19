@@ -18,3 +18,5 @@
 
 # upload image path
 public/uploads/*
+
+config/secrets.yml
