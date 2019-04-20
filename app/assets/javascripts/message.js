@@ -48,25 +48,29 @@ $(function(){
   });
 
   var reloadMessages = function() {
-    var group_id = $('.main-header__left-box__current-group').data('group-id');
-    last_message_id = $('.message').last().data('message-id');
-    $.ajax({
-      url: '/groups/' + group_id + '/api/messages',
-      type: 'GET',
-      dataType: 'json',
-      data: {id: last_message_id}
-    })
-    .done(function(messages) {
-      var insertHTML = '';
-      for(let message of messages){
-        insertHTML += buildHTML(message);
-      }
-      $('.messages').append(insertHTML);
-      scroll();
-    })
-    .fail(function() {
-      alert('自動更新に失敗しました。');
-    });
+    if($('.messages').length){
+      var group_id = $('.main-header__left-box__current-group').data('group-id');
+      last_message_id = $('.message').last().data('message-id');
+      $.ajax({
+        url: '/groups/' + group_id + '/api/messages',
+        type: 'GET',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
+        var insertHTML = '';
+        for(let message of messages){
+          insertHTML += buildHTML(message);
+        }
+        $('.messages').append(insertHTML);
+        if($('.message').length){
+          scroll();
+        }
+      })
+      .fail(function() {
+        alert('自動更新に失敗しました。');
+      });
+    }
   };
   setInterval(reloadMessages, 5000);
 });
