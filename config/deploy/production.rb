@@ -59,3 +59,6 @@ server '54.249.210.166', user: 'ec2-user', roles: %w{app db web}
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
